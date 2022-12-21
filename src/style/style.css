@@ -26,27 +26,87 @@ header .btn_menu {
     display: none;
 }
 
-.sidebar {
+nav {
     width: 100%;
 }
 
-.sidebar ul {
+nav ul {
     display: flex;
     justify-content: flex-end;
 }
 
-.sidebar ul li {
+nav ul li {
     margin-right: 1rem;
     font-weight: 600;
     color: #9B41E0;
 }
 
-.sidebar ul li:hover {
+nav ul li:hover {
     color: aliceblue;
 }
 
-.sidebar ul li .icone {
+nav ul li .icone {
     display: none;
+}
+
+/* menu hambúrguer */
+.hamburguer-icon {
+    position: relative;
+    width: 20px;
+    height: 20px;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    transition: 1s;
+}
+
+.hamburguer-icon span {
+    position: absolute;
+    display: block;
+    height: 3px;
+    background: #9B41E0;
+    border-radius: 10px;
+    box-shadow: 0 0 3px #9B41E0;
+    transition: .3s;
+    transition-delay: 1s;
+}
+
+.hamburguer-icon span:nth-child(1) {
+    top: 0;
+    left: 0;
+    width: 50%;
+}
+
+.hamburguer-icon span:nth-child(2) {
+    width: 100%;
+    transform: scaleX(1);
+    opacity: 1;
+}
+
+.hamburguer-icon span:nth-child(3) {
+    bottom: 0;
+    right: 0;
+    width: 50%;
+}
+
+/* menu ativo */
+.btn_menu.active .hamburguer-icon {
+    transform: rotate(315deg);
+}
+
+.btn_menu.active span:nth-child(1) {
+    width: 100%;
+    transform: translateY(9px);
+}
+
+.btn_menu.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.btn_menu.active span:nth-child(3) {
+    bottom: 8px;
+    width: 100%;
+    transform: rotate(90deg);
 }
 
 @media screen and (max-width: 700px) {
@@ -66,7 +126,7 @@ header .btn_menu {
         transition: .25s;
     }
 
-    .sidebar_ativa {
+    .sidebar.active {
         right: 0;
         transition: .25s;
     }
