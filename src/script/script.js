@@ -1,6 +1,6 @@
 const btnMenu = document.querySelector('.btn_menu');
 const sidebar = document.querySelector('.sidebar');
-const pagina = document.querySelector('.container')
+const pagina = document.querySelector('.container');
 
 /* adicionando evento ao botão */
 btnMenu.addEventListener('click', () => {
